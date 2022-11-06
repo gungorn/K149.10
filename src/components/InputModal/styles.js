@@ -22,7 +22,7 @@ const styles = StyleSheet.create({
     borderRadius: 16,
     padding: 24,
     alignItems: 'center',
-    shadowColor: theme1.main,
+    shadowColor: theme1.yellow,
     shadowOffset: {
       width: 0,
       height: 2,

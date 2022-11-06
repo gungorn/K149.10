@@ -1,22 +1,32 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import {View, Text} from 'react-native';
 
-import {AddButton, InputModal} from '../../components';
+import {AddButton, InputModal, List} from '../../components';
 
 import styles from './styles';
 
 const Home = props => {
   const [inputModalVisible, setInputModalvisible] = useState(false);
+  const [list, setList] = useState([]);
+
+  const onClose = d => {
+    setInputModalvisible(false);
+    const newList = [...list];
+    newList.push({
+      createDate: new Date().getTime(),
+      text: d,
+    });
+    setList(newList);
+  };
 
   return (
     <View style={styles.container}>
-      <InputModal
-        visible={inputModalVisible}
-        onClose={d => {
-          setInputModalvisible(false);
-          alert(d);
-        }}
-      />
+      <List data={list} />
+
+      {inputModalVisible && (
+        <InputModal visible={inputModalVisible} onClose={onClose} />
+      )}
+
       <AddButton
         right
         radius={24}

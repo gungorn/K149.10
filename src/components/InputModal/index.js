@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import {View, Text, TouchableOpacity, Modal, TextInput} from 'react-native';
 import PropTypes from 'prop-types';
 
@@ -7,11 +7,27 @@ import styles from './styles';
 const InputModal = props => {
   const [value, setValue] = useState('');
 
+  useEffect(() => {
+    console.log('componentDidMount');
+    return () => {
+      console.log('componentWillUnmount');
+    };
+  }, []);
+
+  useEffect(() => {
+    console.log('componentDidUpdate');
+    return () => null;
+  });
+
+  useEffect(() => {
+    console.log('value is changed');
+  }, [value]);
+
   return (
     <Modal
       statusBarTranslucent
-      animationType="slide"
-      transparent={true}
+      animationType="fade"
+      transparent
       visible={props.visible}>
       <TouchableOpacity
         style={styles.centeredView}
