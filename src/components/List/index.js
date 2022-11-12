@@ -14,7 +14,12 @@ const List = props => {
         data={data}
         renderItem={({item, index}) => {
           return (
-            <View style={[styles.itemContainer, styles.shadow]}>
+            <View
+              style={[
+                styles.itemContainer,
+                styles.shadow,
+                {backgroundColor: item.color},
+              ]}>
               <Text style={styles.itemText}>{item.text}</Text>
             </View>
           );

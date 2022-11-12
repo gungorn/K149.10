@@ -1,5 +1,5 @@
 import React from 'react';
-import {View, Text, TouchableOpacity} from 'react-native';
+import {Text, TouchableOpacity} from 'react-native';
 import PropTypes from 'prop-types';
 
 import styles from './styles';
@@ -10,8 +10,8 @@ const AddButton = props => {
       style={[
         styles.container,
         {margin: props.margin, borderRadius: props.radius},
-        props.left && !props.right && {left: 0},
-        props.right && {right: 0},
+        props.left && !props.right && {left: -24, paddingLeft: 48},
+        props.right && {right: -24},
       ]}
       onPress={props.onPress}>
       <Text style={styles.addText}>+</Text>

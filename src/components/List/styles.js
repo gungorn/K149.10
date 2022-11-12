@@ -12,9 +12,10 @@ const styles = StyleSheet.create({
 
   itemContainer: {
     width: W(44),
-    backgroundColor: theme1.yellow,
+    backgroundColor: theme1.main,
     margin: W(1),
     padding: 8,
+    borderRadius: 2,
   },
   itemText: {
     fontWeight: 'bold',
@@ -22,10 +23,11 @@ const styles = StyleSheet.create({
     flex: 1,
     textAlign: 'center',
     textAlignVertical: 'center',
+    color: 'black',
   },
 
   shadow: {
-    shadowColor: '#000',
+    shadowColor: theme1.main,
     shadowOffset: {
       width: 0,
       height: 4,

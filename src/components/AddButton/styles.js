@@ -4,17 +4,25 @@ import {theme1} from '../../themes/palettes';
 const styles = StyleSheet.create({
   container: {
     position: 'absolute',
-    bottom: 0,
+    bottom: -24,
     backgroundColor: theme1.main,
-    width: 48,
+    width: 96,
     aspectRatio: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
+    paddingLeft: 32,
+    paddingTop: 24,
+    shadowColor: theme1.main,
+    shadowOffset: {
+      width: 0,
+      height: 2,
+    },
+    shadowOpacity: 1,
+    shadowRadius: 4,
+    elevation: 8,
   },
   addText: {
     fontSize: 24,
     fontWeight: 'bold',
-    color: theme1.white
+    color: theme1.white,
   },
 });
 
