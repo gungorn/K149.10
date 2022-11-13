@@ -1,8 +1,7 @@
 import React from 'react';
-import {View, Text, FlatList} from 'react-native';
+import {View, Text} from 'react-native';
 import PropTypes from 'prop-types';
-//import {FlashList, MasonryFlashList} from '@shopify/flash-list';
-
+import MasonryList from '@react-native-seoul/masonry-list';
 import styles from './styles';
 
 const List = props => {
@@ -10,8 +9,11 @@ const List = props => {
 
   return (
     <View style={styles.container}>
-      <FlatList
+      <MasonryList
         data={data}
+        keyExtractor={(d, i) => i + ''}
+        numColumns={2}
+        showsVerticalScrollIndicator={false}
         renderItem={({item, index}) => {
           return (
             <View
@@ -24,8 +26,6 @@ const List = props => {
             </View>
           );
         }}
-        numColumns={2}
-        estimatedItemSize={200}
       />
     </View>
   );
