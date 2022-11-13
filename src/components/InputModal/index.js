@@ -57,12 +57,13 @@ const InputModal = props => {
 
         <TouchableOpacity
           style={styles.modalButtonView}
-          onPress={() =>
+          onPress={() => {
+            setValue('');
             props.onClose({
               text: value,
               color: colors[selectedColor],
-            })
-          }>
+            });
+          }}>
           <Text style={styles.modalButtonText}>Tamam</Text>
         </TouchableOpacity>
       </TouchableOpacity>
