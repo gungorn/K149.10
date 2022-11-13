@@ -29,11 +29,11 @@ const Home = connect(
   const {list} = app;
 
   useEffect(() => {
-    const listStr = mmkv.getItem('@list');
+    // const listStr = mmkv.getItem('@list');
 
-    if (listStr) {
-      props.dispatch(setList(JSON.parse(listStr)));
-    }
+    // if (listStr) {
+    //   props.dispatch(setList(JSON.parse(listStr)));
+    // }
     return () => null;
   }, []);
 
@@ -50,7 +50,7 @@ const Home = connect(
       ];
       props.dispatch(setList(newList));
 
-      mmkv.setItem('@list', JSON.stringify(newList));
+      //mmkv.setItem('@list', JSON.stringify(newList));
     }
   };
 

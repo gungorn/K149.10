@@ -17,6 +17,7 @@
     "prop-types": "^15.8.1",
     "react": "18.1.0",
     "react-native": "0.70.4",
+    "react-native-console-time-polyfill": "^1.2.3",
     "react-native-mmkv": "^2.5.1",
     "react-redux": "^8.0.5",
     "redux": "^4.2.0",
